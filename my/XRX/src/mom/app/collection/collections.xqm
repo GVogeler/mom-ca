@@ -61,25 +61,27 @@ declare function collections:recently-added($db-base-collections) {
 };
 
 declare function collections:list($label as xs:string, $collections) as element() {
-    <div>
+(:  
+Start with a "ToC": default by initial of the cei:title or cei:provenance 
+and then add for each group a list of collections starting with the initial 
+:)
+  let $alphabet := distinct-values($collections//(cei:titleStmt/cei:title/text()|cei:provenance/text())[1]/upper-case(substring(normalize-space(),1,1)))
+  return 
+    <div class="mainCollections">
       <div class="country-name" id="{$label}">{ $label }</div>
-    {let $alphabet := distinct-values($collections//(cei:titleStmt/cei:title/text()|cei:provenance/text())[1]/upper-case(substring(normalize-space(),1,1)))
-    return (
-      (:  
-      Start with a "ToC": default by initial of the cei:title or cei:provenance 
-      and thenn add for each group a list of collections starting with the initial 
-      :)
-      <div id="ToC" class="ToC"><p class="ToC">{
-        for $initial in $alphabet
-        order by $initial
-        return 
+      {<div id="ToC" class="ToC"><p class="ToC">
+        {
+          for $initial in $alphabet
+          order by $initial
+          return 
             <span class="Initiale">[<a href="#{$initial}">{$initial}</a>]</span>
-      }</p></div>), (<div>
-      {
+        }</p></div>
+      }
+      { 
         for $initial in $alphabet
         order by $initial
         return 
-          <div>
+          <div class="listCollectioncs">
             <h3 class="alphabet" id="{$initial}">{$initial}</h3>
             <ul class="nostyle">
               {
@@ -89,11 +91,10 @@ declare function collections:list($label as xs:string, $collections) as element(
                 let $collection-id := (tokenize($collection-atomid, '/'))[3]
                 order by $collection-name
                 return
-                   <li><a href="{ conf:param('request-root') }{ $collection-id }/collection">{ $collection-name }</a></li>
+                   <li><a href="{ $collection-id }/collection">{ $collection-name }</a></li>
               }
             </ul>
           </div>
-        }
-        </div>)
-      }</div>
+      }
+    </div>
 };
