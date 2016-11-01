@@ -61,20 +61,20 @@ declare function collections:recently-added($db-base-collections) {
 };
 
 declare function collections:list($label as xs:string, $collections) as element() {
-
     <div>
+    {let $alphabet := distinct-values($collections//(cei:titleStmt/cei:title/text()|cei:provenance/text())[1]/upper-case(substring(normalize-space(),1,1)))
+    return (
       <div class="country-name" id="{$label}">{ $label }</div>
       <!-- 
       Start with a "ToC": default by initial of the cei:title or cei:provenance 
       and thenn add for each group a list of collections starting with the initial 
       -->
       <div id="ToC" class="ToC"><p class="ToC">{
-        let $alphabet := distinct-values($collections//(cei:titleStmt/cei:title/text()|cei:provenance/text())[1]/upper-case(substring(normalize-space(),1,1)))
         for $initial in $alphabet
         order by $initial
         return 
             <span class="Initiale">[<a href="#{$initial}">{$initial}</a>]</span>
-      }</p></div>
+      }</p></div>), (<div>
       {
         for $initial in $alphabet
         order by $initial
@@ -94,5 +94,6 @@ declare function collections:list($label as xs:string, $collections) as element(
             </ul>
           </div>
         }
-      </div>
+        </div>)
+      }</div>
 };
