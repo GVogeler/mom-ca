@@ -197,7 +197,47 @@ div.clear {{
         </span>
         else ()
         }
-      </div>    
+      </div> 
+      <div class="ToC">
+        <span><a href="{ conf:param('request-root') }collections">
+        <xrx:i18n>
+          <xrx:key>by-alphabet</xrx:key>
+          <xrx:default>by alphabet</xrx:default>
+        </xrx:i18n>
+        </a></span> |
+        <span>
+          <a href="{ conf:param('request-root') }collections/recently-added">
+          <xrx:i18n>
+            <xrx:key>recently-added</xrx:key>
+            <xrx:default>recently added</xrx:default>
+          </xrx:i18n>
+          </a>
+        </span> |
+        <span>
+          <a href="{ conf:param('request-root') }collections/by-country">
+            <xrx:i18n>
+              <xrx:key>by-country</xrx:key>
+              <xrx:default>by country</xrx:default>
+            </xrx:i18n>
+          </a>
+        </span> |
+        <span>
+          <a href="{ conf:param('request-root') }collections/by-category">
+            <xrx:i18n>
+              <xrx:key>by-category</xrx:key>
+              <xrx:default>by category</xrx:default>
+            </xrx:i18n>
+          </a>
+        </span> |
+        <span>
+          <a href="{ conf:param('request-root') }collections/by-user">
+            <xrx:i18n>
+              <xrx:key>by-user</xrx:key>
+              <xrx:default>by user</xrx:default>
+            </xrx:i18n>
+          </a>
+        </span>
+      </div>
       <xrx:auth>
         <xrx:rules>
           <xrx:rule>
