@@ -69,13 +69,12 @@ declare function collections:list($label as xs:string, $collections) as element(
       and thenn add for each group a list of collections starting with the initial 
       -->
       <div id="ToC" class="ToC"><p class="ToC">{
-        let $alphabet := distinct-values($collections//(cei:titleStmt/cei:title/text()|cei:provenance/text())[1]/upper-case(substring(normalize-space(),1,1))
+        let $alphabet := distinct-values($collections//(cei:titleStmt/cei:title/text()|cei:provenance/text())[1]/upper-case(substring(normalize-space(),1,1)))
         for $initial in $alphabet
         order by $initial
         return 
             <span class="Initiale">[<a href="#{$initial}">{$initial}</a>]</span>
       }</p></div>
-      { 
       {
         for $initial in $alphabet
         order by $initial
@@ -91,9 +90,9 @@ declare function collections:list($label as xs:string, $collections) as element(
                 order by $collection-name
                 return
                    <li><a href="{ conf:param('request-root') }{ $collection-id }/collection">{ $collection-name }</a></li>
-            }
-          </ul>
-        </div>
+              }
+            </ul>
+          </div>
         }
       </div>
 };
