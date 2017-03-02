@@ -12,7 +12,8 @@
     <xsl:variable name="cei" select="/xhtml:page//cei:text"/>
     
     <xsl:template match="/">     
-        <xsl:apply-templates select="$sitemap"/>
+<!--        <xsl:apply-templates select="$sitemap"/>-->
+        <xsl:apply-templates/>
     </xsl:template>
     
     <xsl:param name="image-base-uri"/>
@@ -322,36 +323,9 @@
                             <xrx:default>Persons</xrx:default>
                         </xrx:i18n>
                     </b>
-                    <xsl:choose>
-                        <xsl:when test="$cei//cei:persName/@key">                           
-                            <xsl:for-each select="$cei//cei:persName/@key">
-                                <xsl:variable name="key" select="."/>
-                                <xsl:choose>
-                                    <!-- compare with TEI of bishops -->
-                                    <xsl:when
-                                        test="document('/db/mom-data/metadata.person.public/Bischofsliste_Ablaesse.tei.xml')//tei:person/@xml:id = .">
-                                        <ul>
-                                            <li value="true" class="bishop" id="{$key}">
-                                                <xsl:value-of select="parent::cei:persName"/>
-                                            </li>
-                                        </ul>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <ul>
-                                            <xsl:call-template name="persName"/>
-                                        </ul>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:for-each>
-
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <ul>
-                                <xsl:call-template name="persName"/>
-                            </ul>
-                        </xsl:otherwise>
-                    </xsl:choose>
-
+                    <ul>
+                        <xsl:call-template name="persName"/>
+                    </ul>
                 </div>
             </xsl:when>
             <xsl:otherwise>
@@ -686,12 +660,12 @@
         <xsl:apply-templates/>
     </xsl:template>
     <xsl:template match="cei:persName">
-    <xsl:variable name="i18n">
-        <xrx:i18n>
-            <xrx:key>cei_persName</xrx:key>
-            <xrx:default>person name</xrx:default>
-        </xrx:i18n>
-    </xsl:variable>
+        <xsl:variable name="i18n">
+            <xrx:i18n>
+                <xrx:key>cei_persName</xrx:key>
+                <xrx:default>person name</xrx:default>
+            </xrx:i18n>
+        </xsl:variable>
         <span class="cei-persname" title="{$cei_persName}">            
             <xsl:apply-templates/>            
         </span>     
@@ -1719,20 +1693,26 @@
 
     <!-- index persName -->
     <xsl:template name="persName">
-        <xsl:for-each select="$cei//cei:persName">
+        <xsl:for-each-group select="$cei//cei:persName" group-by="concat(./text(),'#', @key)">
             <xsl:sort select="."/>
             <xsl:if test="./node()">
-                <li id="{./@key}">
+                <xsl:variable name="key" select="current-group()//@key[1]"/>
+                <li id="{$key}">
+                    <xsl:if test="document('/db/mom-data/metadata.person.public/')//tei:person/@xml:id = $key">                           
+                        <!-- add link to TEI of persons, if @key refers there -->
+                        <xsl:attribute name="value">true</xsl:attribute>
+                        <xsl:attribute name="class">bishop</xsl:attribute>
+                    </xsl:if>
                     <xsl:apply-templates/>
+                    <ul class="inline">
+                        <xsl:call-template name="lang"/>
+                        <xsl:call-template name="reg"/>
+                        <xsl:call-template name="existent"/>
+                        <xsl:call-template name="type"/>
+                    </ul>
                 </li>
-                <ul class="inline">
-                    <xsl:call-template name="lang"/>
-                    <xsl:call-template name="reg"/>
-                    <xsl:call-template name="existent"/>
-                    <xsl:call-template name="type"/>
-                </ul>
             </xsl:if>
-        </xsl:for-each>
+        </xsl:for-each-group>
     </xsl:template>
     <xsl:template name="lang">
         <xsl:choose>
