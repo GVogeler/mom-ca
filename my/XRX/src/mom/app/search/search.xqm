@@ -38,8 +38,7 @@ declare namespace cei="http://www.monasterium.net/NS/cei";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 (: request parameters :)
-declare variable $search:q := 
-    translate(request:get-parameter('q', ''), "'", '"');
+declare variable $search:q := translate(request:get-parameter('q', ''), "'", '?');
 declare variable $search:img := request:get-parameter('img', '');
 declare variable $search:annotations := request:get-parameter('annotations', '');
 declare variable $search:sort := request:get-parameter('sort', 'date');
@@ -219,7 +218,7 @@ declare function search:anno-query-string() {
 declare function search:sort-query-string() {
 
     if($search:sort = 'date') then
-    ' order by ($charter//cei:date/@value, $charter//cei:dateRange/@from, $charter//cei:dateRange/@to)[1] ascending '
+    ' order by (number($charter//cei:issued/cei:date[1]/@value), number($charter//cei:issued/cei:dateRange[1]/@from), number($charter//cei:issued/cei:dateRange[1]/@to))[1] ascending '
     else
     ' order by ft:score($charter) descending '    
 };
