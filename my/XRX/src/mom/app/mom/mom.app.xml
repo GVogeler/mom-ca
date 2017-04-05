@@ -7,7 +7,7 @@
     </xrx:i18n>
   </xrx:title>
   <xrx:subtitle/>
-  <xrx:description/>
+  <xrx:description>main definitions for the mom project</xrx:description>
   <xrx:author>jochen.graf@uni-koeln.de</xrx:author>
   <xrx:licence> This is a component file of the VdU Software for a Virtual Research Environment for
     the handling of Medieval charters. As the source code is available here, it is somewhere between

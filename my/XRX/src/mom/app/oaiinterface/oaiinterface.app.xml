@@ -8,7 +8,7 @@
 		</xrx:i18n>
 	</xrx:title>
 	<xrx:subtitle />
-	<xrx:description />
+	<xrx:description>OAI-PMH interface (unfinished by 2017-04-05)</xrx:description>
 	<xrx:author>andre.streicher@uni-koeln.de</xrx:author>
 	<xrx:licence>
 This is a component file of the VdU Software for a Virtual Research
