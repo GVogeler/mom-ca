@@ -32,7 +32,15 @@
     </xrx:licence>
     
     <xrx:variables>
-        
+        <!-- 
+            Hier müßte ich also wohl die aktuelle Sammlung identifizieren,
+            sie in eine atom:id umbauen und
+        -->
+        <!-- Als Parameter übergeben? -->
+        <xrx:variable>
+            <xrx:name>$current</xrx:name>
+            <xrx:expression>request:get-paramter('coll','')</xrx:expression>
+        </xrx:variable>
        <!-- <xrx:variable>
             <xrx:name>$getlang</xrx:name>
             <xrx:expression>request:get-parameter('sprache', '')</xrx:expression>    
@@ -49,6 +57,7 @@
         </xrx:processor>
     </xrx:init> 
     <xrx:body>
+        <!-- Und hier wird das XML erzeugt -->
       <!--  {    
         let $glossarlabel := data(collection("/db/mom-data/metadata.glossar.public/")/atom:entry[atom:id/text()='tag:www.monasterium.net,2011:/IllUrkGlossar']//skos:Concept/@rdf:about)
         let $glossartitel := collection("/db/mom-data/metadata.glossar.public/")/atom:entry[atom:id/text()='tag:www.monasterium.net,2011:/IllUrkGlossar']//skos:Concept/skos:prefLabel[@xml:lang='de']/text()
