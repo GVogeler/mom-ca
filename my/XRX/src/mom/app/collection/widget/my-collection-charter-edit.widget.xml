@@ -68,7 +68,6 @@
        		<xrx:name>$is-shared</xrx:name>
        		<xrx:expression>mycharter:is-shared-with($entry, $xrx:user-id)</xrx:expression>
        </xrx:variable>
-
         <xrx:variable>
             <xrx:name>$updater</xrx:name>
             <xrx:expression>mycollection:checkUpdateCharter($entry)</xrx:expression>
@@ -398,7 +397,8 @@
     <xrx:view>
         <divs> {mycollection:makeBindings($entry, $distinct_nodes)} </divs>
         <div data-demoid="393de52d-1b4f-4df8-99b1-e7af26b713fe" id="dmy-collection-charter-edit">
-         {if($xrx:user-id = $owner_mail or $is-shared) then ()
+         {if($xrx:user-id = $owner_mail or $is-shared) then ( <script type="text/javascript">window.setInterval(function(){{CheckSessionStatus();}},30000); </script>  )
+         else if($xrx:user-id = 'guest') then()
          else (<script type="text/javascript"> $(document).ready(function(){{ $('#dinner-textann').empty();
          									   PermisDialog();}})</script>
 											  	)}
@@ -415,7 +415,7 @@
                                 <xrx:dbgroup>atom</xrx:dbgroup>
                             </xrx:rule>
                         </xrx:rules>
-                        <xrx:true>                   
+                        <xrx:true>             
                            <div data-demoid="09a18129-a5e4-42f7-ab9e-1d4bcf9497bb"
                                 id="dui-imageann">
                                 <script type="text/javascript"> $(document).ready(function(){{

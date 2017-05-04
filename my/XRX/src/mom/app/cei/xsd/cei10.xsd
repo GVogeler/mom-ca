@@ -1323,7 +1323,12 @@
             </xs:appinfo>
         </xs:annotation>
         <xs:complexType mixed="true">
-            <xs:group ref="layout"/>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:choice>
+                    <xs:element ref="foreign"/>
+                    <xs:group ref="layout"/>
+                </xs:choice>
+            </xs:sequence>
             <xs:attributeGroup ref="lang"/>
             <xs:attributeGroup ref="standard"/>
         </xs:complexType>
@@ -1340,6 +1345,11 @@
             </xs:appinfo>
         </xs:annotation>
         <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element ref="index"/>
+                </xs:choice>
+            </xs:sequence>
             <xs:attributeGroup ref="lang"/>
             <xs:attributeGroup ref="standard"/>
         </xs:complexType>
@@ -1395,6 +1405,7 @@
                     <xs:element ref="seal"/>
                     <xs:element ref="legend"/>
                     <xs:group ref="layout"/>
+                    <xs:element ref="index"/>
                 </xs:choice>
             </xs:sequence>
             <xs:attributeGroup ref="lang"/>
@@ -1431,6 +1442,7 @@
                     <xs:element ref="sealDimensions"/>
                     <xs:element ref="sealMaterial"/>
                     <xs:element ref="sealCondition"/>
+                    <xs:element ref="index"/>
                 </xs:choice>
             </xs:sequence>
             <xs:attributeGroup ref="lang"/>
@@ -1786,6 +1798,7 @@
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
                 <xs:choice>
                     <xs:group ref="layout"/>
+                    <xs:element ref="foreign"/>
                 </xs:choice>
             </xs:sequence>
             <xs:attributeGroup ref="lang"/>
@@ -5180,8 +5193,8 @@
                         </xrx:i18n>
                     </xrxe:label>
                 </xs:appinfo>
-                <xs:documentation xml:lang="deu"> Der verantwortliche Bearbeiter für die
-                    normalisierten Angaben und die Angaben zum Befund. </xs:documentation>
+                <xs:documentation xml:lang="deu">Der verantwortliche Bearbeiter für die
+                    Kodierung, den Inhalt der Kodierung oder die vergebenen Attribute.</xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -5371,6 +5384,7 @@
         <xs:attributeGroup ref="id"/>
         <xs:attributeGroup ref="n"/>
         <xs:attributeGroup ref="facs"/>
+        <xs:attributeGroup ref="resp"/>
     </xs:attributeGroup>
     <xs:attributeGroup name="facs">
         <xs:attribute name="facs">
