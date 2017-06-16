@@ -1813,6 +1813,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Enthält die ersten Wörter des Textes. Im Attribute "type" wird angegeben, auf welchen Textteil es sich bezieht,</xs:documentation>
             <xs:documentation xml:lang="eng">contains the first words of the text. The attribute "type" specifies if it refers to specific part of the text.</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_at_position</xrx:key>
+                    <xrx:default>Description of the place where the text passage can be found on the charter.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -3305,7 +3311,16 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     <xs:group ref="Sachliches"/>
                 </xs:choice>
             </xs:sequence>
-            <xs:attribute name="extent" type="xs:anySimpleType"/>
+            <xs:attribute name="extent" type="xs:anySimpleType">
+                <xs:annotation>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_extent</xrx:key>
+                            <xrx:default>Extent of the damage.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
             <xs:attribute name="degree" type="xs:anySimpleType">
                 <xs:annotation>
                     <xs:appinfo source="EditVDU">
@@ -3317,6 +3332,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrxe:label>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_degree</xrx:key>
+                            <xrx:default>How much of the text is lost?</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attribute name="agent" type="xs:anySimpleType">
@@ -3330,6 +3351,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrxe:label>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_agent</xrx:key>
+                            <xrx:default>What caused the damage?</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attributeGroup ref="certainty"/>
@@ -3377,6 +3404,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                             </xrxe:i18n>
                         </xrxe:label>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_extent</xrx:key>
+                            <xrx:default>Extent of the damage.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attribute name="degree" type="xs:anySimpleType">
@@ -3390,6 +3423,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrxe:label>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_degree</xrx:key>
+                            <xrx:default>How much of the text is lost?</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attributeGroup ref="certainty"/>
@@ -3416,6 +3455,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                             </xrxe:i18n>
                         </xrxe:label>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_agent</xrx:key>
+                            <xrx:default>What caused the damage?</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attributeGroup ref="standard"/>
@@ -3604,6 +3649,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Ein Text, der augenfällige Fehler aufweist, aber in der Vorlage so
         steht. Aber auch für den Text, der vor einer Korrektur stand.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_sic</xrx:key>
+                    <xrx:default>Erroneous text in the original</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -3622,6 +3673,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     <xs:appinfo source="EditVDU">
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_corr</xrx:key>
+                            <xrx:default>Corrected version of erroneous text in the original.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attributeGroup ref="hand"/>
@@ -3649,6 +3706,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Eine Textpassage, die im Text zunächst anders lautete und dann mit dem
         Inhalt des Elements korrigiert worden ist.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_corr</xrx:key>
+                    <xrx:default>Corrections of text made by the editor.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -3664,7 +3727,16 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     <xs:group ref="Referenz"/>
                 </xs:choice>
             </xs:sequence>
-            <xs:attribute name="sic"/>
+            <xs:attribute name="sic">
+                <xs:annotation>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_sic</xrx:key>
+                            <xrx:default>Erroneous text in the original which is corrected in the corr-element.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
             <xs:attributeGroup ref="transcription"/>
             <xs:attributeGroup ref="lang"/>
             <xs:attributeGroup ref="standard"/>
@@ -3691,6 +3763,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         Ein noch lesbarer Text der im Original getilgt worden ist (z.B. durch
         Durchstreichen, Unterpunkten, Rasur).
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_del</xrx:key>
+                    <xrx:default>Deletions</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -3732,6 +3810,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         Nachträgliche Hinzufügungen im Text, die nicht anderen Text ersetzen.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_add</xrx:key>
+                    <xrx:default>Additions</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -3814,6 +3898,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         graphische, zeichenartige Elemente im Text. Mit Hilfe des type-Attribut genauer
         zu bestimmen, mit entity oder URL auf eine externe Art der
         Darstellung zu verweisen.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_pict</xrx:key>
+                    <xrx:default>Graphical symbol</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -3909,6 +3999,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Zahlzeichen und seiner Markierung als Ordinalzahl unterschieden
         werden kann.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_sup</xrx:key>
+                    <xrx:default>Superscript</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:attributeGroup ref="type"/>
@@ -3938,6 +4034,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Vorlage.</xs:documentation>
             <xs:documentation xml:lang="eng">Line break in the source.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_lb</xrx:key>
+                    <xrx:default>Beginning of a new line</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:attributeGroup ref="standard"/>
@@ -3964,6 +4066,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Vorlage.</xs:documentation>
             <xs:documentation xml:lang="eng">Page break in the source.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_pb</xrx:key>
+                    <xrx:default>Beginning of a new page in a multi page document.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:attributeGroup ref="standard"/>
@@ -3992,6 +4100,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Zeichensatz dargestellt werden kann. Die Art und Weise der
         Darstellung und Verarbeitung ist in der encodingDesc zu beschreiben.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_c</xrx:key>
+                    <xrx:default>Any character (or ligature) which needs further description because simple transcription does not give the full information necessary</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:attributeGroup ref="type">
@@ -4027,6 +4141,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         durch graphische Merkmale hervorgehobene Textpassagen, die keine rein
         inhaltliche Funktion haben, z.B. vergrößerte Initialen, gesperrte
         Texte, Texte zwischen Referenzpunkten, Elongata
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_hi</xrx:key>
+                    <xrx:default>Text visually distinct from the default writing (e.g. elongata). Give a descriptive typology in the rend-attribute.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -4144,6 +4264,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Ersetzt das Tag einen textlichen Verweis bzw. wird der Verweistext
         automatisch erzeugt, ist das Element "ptr" zu verwenden.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_ref</xrx:key>
+                    <xrx:default>Reference to other text, which could be used as a hyperlink. The target of reference can be given as a URL in the target-attribute.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:simpleContent>
@@ -4179,6 +4305,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Ein ergänzender Text zu einer bestimmten Textstelle, der im Druck
         gewöhnlich als Marginalie, Fuß- oder Endnote dargestellt wird.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_note</xrx:key>
+                    <xrx:default>Any kind of notes added to the charter text, e.g. by archivists or scholars, extracted from footnotes/endnotes in printed editions, etc.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -4207,7 +4339,13 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     <xs:documentation source="EditMOM-documentation">
                         <xrx:i18n>
                             <xrx:key>docu_cei_at_n</xrx:key>
-                            <xrx:default>A name or a number identifying the current element further.</xrx:default>
+                            <xrx:default>A name or a number identifying the current note.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_place</xrx:key>
+                            <xrx:default>Place, where the textual intervention can be found.</xrx:default>
                         </xrx:i18n>
                     </xs:documentation>
                 </xs:annotation>
@@ -4369,6 +4507,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Urkunden, eingeflochtene lateinische Textpassagen im deutschen
         Vorspann etc.)
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_foreign</xrx:key>
+                    <xrx:default>Text in a different language than the main body of the text. You can give the language used in the lang-attribute.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -4404,6 +4548,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         dabei nicht auf explizit bibliographische Angaben beschränkt,
         sondern kann auch kanonische Referenzen (wie z.B. Bibelzitate)
         enthalten.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_cit</xrx:key>
+                    <xrx:default>A combination of quoted text together with the bibliographic identification of the source.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="false">
@@ -4444,6 +4594,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         eines angekündigten wörtlichen Zitats, z.B: wir bestätigen die
         Urkunde unseres Vaters die folgenden Wortlaut hat: ....
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_quote</xrx:key>
+                    <xrx:default>Text quoted verbally from other text (e.g. from older charters, from other legal text, from the bible, etc..</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -4575,6 +4731,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Ein Maßangabe inkl. Maßeinheit. Das Attribut "value" enthält eine
         vereinheitliche Form der Angabe die aus einem numerischen Wert und
         einer Maßangabe besteht.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_measure</xrx:key>
+                    <xrx:default>A measurement as a combination of quantity and unit. Add a modernized (e.g. metrical) form of the measurement into the "value" attribute.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -5964,6 +6126,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     </xrxe:label>
                     <xrxe:relevant context="='damage'"/>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_extent</xrx:key>
+                        <xrx:default>Extent of the damage.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -6098,6 +6266,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrx:i18n>
                     </xrxe:label>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_abbr</xrx:key>
+                        <xrx:default>The abbreviated form of expanded abbreviation (e.g. "xpo" for "christo").</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -6112,6 +6286,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrx:i18n>
                     </xrxe:label>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_expan</xrx:key>
+                        <xrx:default>The expanded form of an abbreviation.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -6194,6 +6374,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
           Die Sprache des Elements und aller Unterelemente, solange nichts
           anderes angegeben ist.
              </xs:documentation>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_lang</xrx:key>
+                        <xrx:default>contains an abbreviation (such as: de, la, mhd, hu), in case the element's language deviates from the language of the surrounding text or from the element's conventional language</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -6212,6 +6398,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xs:documentation xml:lang="deu">
           Die Art der Darstellung des Elements, insbesondere Bezeichnung der
           Schriftart bei Hervorhebungen.
+                </xs:documentation>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_rend</xrx:key>
+                        <xrx:default>Describes how the current text passage looks like (e.g. "Elongata").</xrx:default>
+                    </xrx:i18n>
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -6232,6 +6424,13 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrx:i18n>
                     </xrxe:label>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_hand</xrx:key>
+                        <xrx:default>Attributes the hand which executed the current textual
+                            intervention.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
