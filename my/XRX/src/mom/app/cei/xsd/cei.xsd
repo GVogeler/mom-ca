@@ -547,6 +547,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                                                 <xs:documentation xml:lang="deu">
                           Gibt die Identifikationsnummer der Urkunde im aktuellen Corpus an.
                                                 </xs:documentation>
+                                                <xs:documentation source="EditMOM-documentation">
+                                                    <xrx:i18n>
+                                                        <xrx:key>docu_cei_idno</xrx:key>
+                                                        <xrx:default>The object's indentification number inside the current structure, e. g. the number in a book of documents and identifying characteristics which distinguish it from other documents- thus, no inventory abbreviations, but rather just the number, and in necesary cases, the age determination. For handwritten documents, the library's assigned indentification numbers will be incorporated.</xrx:default>
+                                                    </xrx:i18n>
+                                                </xs:documentation>
                                             </xs:annotation>
                                             <xs:complexType>
                                                 <xs:simpleContent>
@@ -700,6 +706,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Struktur (z.B. Nummer in einem Urkundenbuch, Bestand in einem
         Archiv, Handschriftensignatur in einer Bibliothek.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_idno</xrx:key>
+                    <xrx:default>The object's indentification number inside the current structure, e. g. the number in a book of documents and identifying characteristics which distinguish it from other documents- thus, no inventory abbreviations, but rather just the number, and in necesary cases, the age determination. For handwritten documents, the library's assigned indentification numbers will be incorporated.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1091,6 +1103,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                             <xs:documentation>
                                 MOM-spezifisch: Eigentlich tenor@lang
               </xs:documentation>
+                            <xs:documentation source="EditMOM-documentation">
+                                <xrx:i18n>
+                                    <xrx:key>docu_cei_lang_MOM</xrx:key>
+                                    <xrx:default>Language in which the charter is written</xrx:default>
+                                </xrx:i18n>
+                            </xs:documentation>
                         </xs:annotation>
                         <xs:complexType mixed="true">
                             <xs:attributeGroup ref="standard"/>
@@ -1126,6 +1144,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         <xrx:default>&lt;cei:abstract>&lt;cei:issuer>Rudolph III. Herzog von Österreich&lt;/cei:issuer> bestätigt die Privilegien des &lt;cei:recipient>Klosters Geras&lt;/cei:recipient>, namentlich in gewissen Beziehungen, in denen Beeinträchtigungen eingetreten waren.&lt;/cei:abstract></xrx:default>
                     </xrx:i18n>
                 </xrx:example>
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_abstract</xrx:key>
+                    <xrx:default>Abstract which summarizes the legal contents of a charter document; either a short header in some editions or a more detailed long-abstract with verbatim citations. Note: All abstracts should name the author/sender of a document (issuer) and its receiver.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -1293,6 +1317,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">       
                 Textzeugen: kopiale Überlieferung (MOM)
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_witListPar</xrx:key>
+                    <xrx:default>Lists all copies and their features.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -1320,6 +1350,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
                 Der einzelne Textzeuge
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_witness</xrx:key>
+                    <xrx:default>A single textual witness.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -1357,6 +1393,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrxe:label>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_n</xrx:key>
+                            <xrx:default>A name or a number identifying the current element further.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
         </xs:complexType>
@@ -1376,6 +1418,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Überlieferungsform: Original, Kopial, Insert, Transsumpt, Vidimus, Konzept. Die
         verwendete Begrifflichkeit ist dem VID zu entnehmen oder in der
         profileDesc zu dokumentieren.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_traditioForm</xrx:key>
+                    <xrx:default>Way of tradition (e.g. 'orig.', 'spur.'(spurium), 'ins.'(inspexismus/insertum), 'cop.', 'trans.' (transsumptum) etc. It is recommended to refer to the Vocabulaire internationale de la Diplomatique for the terminology applied.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -1400,6 +1448,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xrxe:rows>2</xrxe:rows>
                 <xrxe:min-occur>0</xrxe:min-occur>
             </xs:appinfo>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_condition</xrx:key>
+                    <xrx:default>Describes the material condition of the charter, e.g. damage by humidity, damage done by mice, cuts, holes etc.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1422,6 +1476,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     </xrx:i18n>
                 </xrxe:label>
             </xs:appinfo>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_sealCondition</xrx:key>
+                    <xrx:default>Conservatory conditions of the seal, e.g. damages, lost, etc.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -1450,6 +1510,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:documentation>
             <xs:documentation xml:lang="eng">describes the
         authentification of the document.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_auth</xrx:key>
+                    <xrx:default>Description of the means of authentication.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -1480,6 +1546,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">
                 eine differenzierte Siegelbeschreibung.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_sealDesc</xrx:key>
+                    <xrx:default>structured description of the seals: Each seal, incl. missing, are entered by using the menu "seal description". In case of missing seals you describe the indications for assuming the loss directly in the "seal" element.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -1515,6 +1587,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">
                 Ein einzelnes Siegel (CEI_MOM spezifisch!)
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_seal</xrx:key>
+                    <xrx:default>Description of a single seal. It can be describe in unstructured prose or by using appropriate markup for sigillant, legend, condition, dimensions etc.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -1554,6 +1632,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         gibt den Text, der auf einem Siegel angebracht ist, wieder.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_legend</xrx:key>
+                    <xrx:default>The text on the seal.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -1587,6 +1671,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
                 der Siegelinhaber
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_sigillant</xrx:key>
+                    <xrx:default>The person/organisation represented by the seal.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -1613,6 +1703,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Beschreibung einer
         notariellen Unterfertigung.</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_notariusDesc</xrx:key>
+                    <xrx:default>Describes the authentication by a notary in particular with the name of the notary and a short description of his notarial sign.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -1746,6 +1842,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         werden können oder weitere Strukturen haben können wie
         Beschreibstoff (material), Maße (dimensions) etc.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_physicalDesc</xrx:key>
+                    <xrx:default>Description of physical features.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -1798,6 +1900,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         Maße des Objekts (Höhe x Breite oder in eigenen Elementen)
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_dimensions</xrx:key>
+                    <xrx:default>Dimensions (Height x Width) usually given in cm, e.g. (10.7 x 15.3 cm).</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1864,6 +1972,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         Maße des Objekts (Höhe x Breite oder in eigenen Elementen)
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_sealDimensions</xrx:key>
+                    <xrx:default>Dimensions of the seal (diamter or width/height/depth or other appropriate forms)</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:attributeGroup ref="standard"/>
@@ -1887,6 +2001,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="eng">
         describes the material on which the document is written
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_material</xrx:key>
+                    <xrx:default>Describes the material of the writing supporg ("Parchment", "Paper", "Papyrus", etc.)</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1923,6 +2043,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="eng">
         describes the material on which the document is written
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_sealMaterial</xrx:key>
+                    <xrx:default>Material of the seal (wax, gold, lead, ...)</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:attributeGroup ref="lang"/>
@@ -1948,6 +2074,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
       </xs:documentation>
             <xs:documentation xml:lang="eng">contains the extra
         sigillum notes on the document.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_nota</xrx:key>
+                    <xrx:default>Notes added to the charter before handing it to the recipient.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -1984,6 +2116,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         beschreibt die institutionelle Referenz auf eine Archivale (mit Lagerort,
         Signatur etc.)
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_archIdentifier</xrx:key>
+                    <xrx:default>gives the institutional reference of the document (with repository, shelf mark etc.)</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -2058,6 +2196,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Das Archiv als im Moment der Textentstehung existierende Institution,
         die Schriftgut aus der Vergangenheit verwahrt.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_arch</xrx:key>
+                    <xrx:default>Name of the archive.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -2090,6 +2234,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         Ein Bestand in einem Archiv, d.h. gewöhnlich eine Gruppe von Archivgut,
         das in einem Provenienzzusammenhang steht.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_archFond</xrx:key>
+                    <xrx:default>Fond/repository in the archive.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -2146,6 +2296,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Die Bezeichnung einer Handschrift mit Lagerort und Signatur/Bezeichnung
         innerhalb der lagernden Institution.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_msIdentifier</xrx:key>
+                    <xrx:default>Identification of a manuscript (not kept in archives)</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2180,6 +2336,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Die Einrichtung, in der
         ein Objekt gelagert ist.</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_repository</xrx:key>
+                    <xrx:default>Repository to which the manuscript belongs.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:simpleContent>
@@ -2206,6 +2368,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation>
         Orginaldatierung in cei_MOM, eigentlich als quote type="Originaldatierung"
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_quoteOriginaldatierung</xrx:key>
+                    <xrx:default>Gives the original wording of the dating clause. This field should remain empty when the dating clause is marked up in the transcription.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2232,6 +2400,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">
         Der eigentliche Urkundentext. Transkriptionselemente</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_tenor</xrx:key>
+                    <xrx:default>The very text of the charter.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2264,6 +2438,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Ein Absatz mit Fließtext
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_p</xrx:key>
+                    <xrx:default>A paragraph in prose.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2304,6 +2484,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Ein Absatz
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_pTenor</xrx:key>
+                    <xrx:default>A paragraph in the tenor of the document, e.g. distinguishing main body of text from subscriptions, dating lines, etc.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2359,6 +2545,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xrxe:max-occur>unbounded</xrxe:max-occur>
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Eine (meist einleitende) Anrufung Gottes</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_invocatio</xrx:key>
+                    <xrx:default>Invocatio: Calling of a divine institution.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2392,6 +2584,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xrxe:max-occur>unbounded</xrxe:max-occur>
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Die Nennung des Ausstellers mit seinen Titeln</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_intitulatio</xrx:key>
+                    <xrx:default>Intitulatio: naming the issuer of the charter and his titles</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2426,6 +2624,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Eine Adresse im
         Urkundentext</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_inscriptio</xrx:key>
+                    <xrx:default>Inscriptio: phrase indicating the person/organisation the charter is adressed to</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2460,6 +2664,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Die
         Veröffentlichungsformel</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_publicatio</xrx:key>
+                    <xrx:default>Claus of publication</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2495,6 +2705,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         Eine allgemeine Einleitung, die die Ausstellung der Urkunde begründet
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_arenga</xrx:key>
+                    <xrx:default>Arenga: some general remarks motivating the charter.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2531,6 +2747,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         erzählt die Ereignisse und Handlungen, die der Ausstellung der Urkunde
         vorangegangen sind
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_narratio</xrx:key>
+                    <xrx:default>Narratio (telling the events preceding the legal act).</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2632,6 +2854,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">enthält die eigentlichen
         Rechtsverfügungen</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_dispositio</xrx:key>
+                    <xrx:default>Disposito: the text with the very provision.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2666,6 +2894,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">kündigt die
         Beglaubigungsmittel an</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_corroboratio</xrx:key>
+                    <xrx:default>Corroboratio</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2702,6 +2936,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xrxe:min-occur>0</xrxe:min-occur>
                 <xrxe:max-occur>unbounded</xrxe:max-occur>
             </xs:appinfo>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_sanctio</xrx:key>
+                    <xrx:default>Sanctio</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2737,6 +2977,13 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xrxe:min-occur>0</xrxe:min-occur>
                 <xrxe:max-occur>unbounded</xrxe:max-occur>
             </xs:appinfo>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_subscriptio</xrx:key>
+                    <xrx:default>Subscriptio: signatures which cannot be described more
+                        specifically</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2781,6 +3028,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Datierung der Urkunde
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_datatio</xrx:key>
+                    <xrx:default>Datatio (dating clause)</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2847,6 +3100,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Attributs "type" an der Terminologie des "Vocabulaire Internationale
         de Diplomatique" orientieren.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_setPhrase</xrx:key>
+                    <xrx:default>Any kind of fixed set formulae. You can specify it with the attribute "type", in particalur by using terms defined in the Vocabulaire internationale de la diplomatique.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2882,6 +3141,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Die Notarsunterschrift
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_notariusSub</xrx:key>
+                    <xrx:default>Subscription of a notary</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -2971,6 +3236,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         dim="vertical" extent="4 Zeilen". Ist die Lücke durch eine Rasur
         entstanden, ist ein leeres Element "del" vorzuziehen.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_space</xrx:key>
+                    <xrx:default>Space left empty deliberately. The attributes "dimension" and "extent" give the orientation ("horizontal/vertical") and the size (e.g. "4 lines", "three letters", "2 cm", etc.). Space created by scraping is better indicated as deletion.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:attribute name="dim">
@@ -3014,6 +3285,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Eigenschaften des Textes ihn nur schwer oder gar nicht entzifferbar
         machen.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_damage</xrx:key>
+                    <xrx:default>Damage</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -3915,6 +4192,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrxe:label>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_n</xrx:key>
+                            <xrx:default>A name or a number identifying the current element further.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
         </xs:complexType>
@@ -5702,6 +5985,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xs:documentation xml:lang="deu">
           Eine lokale Identifikation, wie z.B. die Fußnotennummer.
         </xs:documentation>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_n</xrx:key>
+                        <xrx:default>A name or a number identifying the current element further.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
