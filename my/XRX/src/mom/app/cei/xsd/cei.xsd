@@ -3444,6 +3444,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         folgenden Textes, falls z.B. über eine Referenz auf eine Liste der
         Schreiber (Element handList) möglich.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_handShift</xrx:key>
+                    <xrx:default>Change of visual appearance with the probable cause of another scribe.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:attributeGroup ref="hand"/>
@@ -3546,6 +3552,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xrxe:max-occur>unbounded</xrxe:max-occur>
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Der ausgeschriebene Text einer Abkürzung.</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_expan</xrx:key>
+                    <xrx:default>Expanded part of an abbreviation</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -4598,10 +4610,25 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Eine Zahlenangabe
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_num</xrx:key>
+                    <xrx:default>A number which could be expressed numerically for calculation purposes. Give a numerical representation in the attribute "value" (by using the single dot as decimal seperator: "0.5" for "half"</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:attributeGroup ref="type"/>
-            <xs:attribute name="value" type="xs:double"/>
+            <xs:attribute name="value" type="xs:double">
+                <xs:annotation>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_num_at_value</xrx:key>
+                            <xrx:default>Gives the numerical representation for the number the computer can use to calculate. Please note that decimals are indicated by a point (English notation), so e.g. write 0.5 for a half.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
             <xs:attributeGroup ref="lang"/>
             <xs:attributeGroup ref="rend"/>
             <xs:attributeGroup ref="standard"/>
@@ -4664,6 +4691,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         ein Eintrag für eine erschließende Liste von Stichwörtern (Register,
         Index)
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_index</xrx:key>
+                    <xrx:default>A list of keywords helping the user to find the charter. The element itself contains the text as fitting in the current linguistic context, while normalies forms are entered into the lemma-attribute.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -4684,6 +4717,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrxe:label>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_indexName</xrx:key>
+                            <xrx:default>Categorizing the index, e.g. "index of legal terms", "index of artefacts", "index of occupations" etc. Please try to restrict the creation of new types.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attribute name="lemma">
@@ -4697,6 +4736,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrxe:label>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_lemma</xrx:key>
+                            <xrx:default>The keyword, which is used as the main entry in the index. Usually a modern form the term in the source. Add explanation to it in brackets, if necessary.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attribute name="sublemma">
@@ -4710,6 +4755,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrxe:label>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_sublemma</xrx:key>
+                            <xrx:default>If the current index term should be subdived, put the sub term here.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attributeGroup ref="ref"/>
@@ -4739,6 +4790,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         Die Angabe eines spezifischen Tages in einem Kalender (=Datumsangabe).
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_date</xrx:key>
+                    <xrx:default>An indication of a date (e.g. when the charter was issued, usually given as "Year Month (in letters) Day").</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:alternative test="ancestor::issued" type="dateNormalized"
             xpathDefaultNamespace="##targetNamespace"/>
@@ -4792,6 +4849,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Ein Zeitraum, die Werte des kleinsten und des größten zutreffenden
         Datums in den Attributen "from" und "to"
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_dateRange</xrx:key>
+                    <xrx:default>Gives a date range (e.g. in which the charter probably was issued). Indicate the earliest and latest possible date with the attributes "from" and "to".</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -4827,6 +4890,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         <xrxe:default-value>99999999</xrxe:default-value>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_from</xrx:key>
+                            <xrx:default>Gives the earlies possible date.</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attribute name="to" type="normalizedDateValue" use="required">
@@ -4855,6 +4924,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         <xrxe:default-value>99999999</xrxe:default-value>
                         <xrxe:relevant>true</xrxe:relevant>
                     </xs:appinfo>
+                    <xs:documentation source="EditMOM-documentation">
+                        <xrx:i18n>
+                            <xrx:key>docu_cei_at_to</xrx:key>
+                            <xrx:default>Gives the lates possible date</xrx:default>
+                        </xrx:i18n>
+                    </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attributeGroup ref="certainty"/>
@@ -4880,6 +4955,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                 <xrxe:max-occur>unbounded</xrxe:max-occur>
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Die Bezeichnung einer Organisation</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_orgName</xrx:key>
+                    <xrx:default>A list of entries in an index of organisations (e.g. monasteries)</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -4923,6 +5004,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">ein Personenname
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_persName</xrx:key>
+                    <xrx:default>A list of entries in a person index</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -5078,6 +5165,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Der Name der Person, die die Urkunde erhält (als Adressat oder als
         Begünstigter)
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_recipient</xrx:key>
+                    <xrx:default>The recipient of the transaction described in the charter.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
             <xs:documentation xml:lang="eng">
         The name of the person who is receives the document.
             </xs:documentation>
@@ -5127,6 +5220,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         marks a person the CID describes as follows: L'auteur d'un acte écrit est
         la personne au nom de qui cet acte est intitulé.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_issuer</xrx:key>
+                    <xrx:default>The issuer of the charter.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -5170,6 +5269,13 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">Ein einzelner Zeuge.
       </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_testis</xrx:key>
+                    <xrx:default>A witness to the legal act or the creation of the
+                        charter.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -5270,6 +5376,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     </xrx:i18n>
                 </xrxe:menu-item>
             </xs:appinfo>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_settlement</xrx:key>
+                    <xrx:default>A human settlement.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:attributeGroup ref="type"/>
@@ -5300,6 +5412,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         Enthält geographische Angaben, die sich auf menschliche Siedlung oder
         politische Einheiten beziehen, d.h. Orte, Hofnamen, Klöster, Burgen,
         Bundesländer, Herrschaften, Staaten etc.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_placeName</xrx:key>
+                    <xrx:default>The name of a human dwelling or a political entity, e.g. from which the document was issued.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -5339,6 +5457,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             <xs:documentation xml:lang="deu">
         Enhält naturräumliche geographische Angaben wie Bergnamen, Flußnamen,
         Landstriche, die keine politische Einheit bilden.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_geogName</xrx:key>
+                    <xrx:default>A geographical name (rivers, mountains, forests, a land parcel, etc.)</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
@@ -5495,6 +5619,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:documentation>
             <xs:documentation xml:lang="eng">Bibliographic
         informations</xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_bibl</xrx:key>
+                    <xrx:default>Bibliographic data of the source of the abstract</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:sequence>
@@ -5552,6 +5682,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
         eines Aufsatzes in einem Sammelband, die Fundstelle einer Urkunde in
         einem Kopialbuch.
             </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_scope</xrx:key>
+                    <xrx:default>The part of a volume, in which the appropriate information can be found.</xrx:default>
+                </xrx:i18n>
+            </xs:documentation>
         </xs:annotation>
         <xs:complexType mixed="true">
             <xs:simpleContent>
@@ -5582,6 +5718,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
             </xs:appinfo>
             <xs:documentation xml:lang="deu">
         Leeres Element, das als Zielpunkt einer Referenz dient.
+            </xs:documentation>
+            <xs:documentation source="EditMOM-documentation">
+                <xrx:i18n>
+                    <xrx:key>docu_cei_anchor</xrx:key>
+                    <xrx:default>A point in the text some other passage links to.</xrx:default>
+                </xrx:i18n>
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -5635,6 +5777,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     </xrxe:label>
                     <xrxe:relevant context="='ref'"/>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_target</xrx:key>
+                        <xrx:default>The target of a hyperlink.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -5660,6 +5808,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
           Beschreibungen charakterisiert werden. auch für
           Fälschungsmarkierungen? [strict!]
              </xs:documentation>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_certainty</xrx:key>
+                        <xrx:default>If the entity cannot be identified precisely you can notify this here by using a short term ("low", "middle", "high"). After a semicolon you can add short descriptive information.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -5692,6 +5846,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     </xrxe:label>
                     <xrxe:relevant context="='persName' or $context='orgName' or $context='geogName' or $context='placeName'"/>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_reg</xrx:key>
+                        <xrx:default>A regularized form of the name including additional identification (e.g. through geographic and administratively superior units for places, date of death for persons etc. Alternative names can be listed seperated by a forward slash ("/"), such as Bratislava/Pressburg/Pozsony (GB Bratislava, SK).</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -5723,6 +5883,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     </xrxe:label>
                     <xrxe:relevant context="='persName' or $context='orgName' or $context='geogName' or $context='placeName' or $context='c'"/>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_type</xrx:key>
+                        <xrx:default>A typology of the information encoded.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -5751,6 +5917,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                         </xrx:i18n>
                     </xrxe:label>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_at_existent</xrx:key>
+                        <xrx:default>Locations no longer in existence or intermittently abandoned settlements will be labeled with a short description.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attributeGroup ref="identification"/>
@@ -5866,6 +6038,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     </xrxe:alert>
                     <xrxe:relevant>true</xrxe:relevant>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_date_at_value</xrx:key>
+                        <xrx:default>A numerical expression of a single value, which has to have the form YYYYMMDD. Unknown month or day can be expressed by 99. A completely unknown date can be expressed by 99999999.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
@@ -5896,6 +6074,12 @@ fehlerhafte Rekursionen zu vermeiden (GV) 2006-03-19
                     </xrxe:alert>
                     <xrxe:relevant>true</xrxe:relevant>
                 </xs:appinfo>
+                <xs:documentation source="EditMOM-documentation">
+                    <xrx:i18n>
+                        <xrx:key>docu_cei_date_at_value</xrx:key>
+                        <xrx:default>A numerical expression of a single value, which has to have the form YYYYMMDD. Unknown month or day can be expressed by 99. A completely unknown date can be expressed by 99999999.</xrx:default>
+                    </xrx:i18n>
+                </xs:documentation>
             </xs:annotation>
         </xs:attribute>
     </xs:attributeGroup>
