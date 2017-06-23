@@ -7,7 +7,7 @@
     </xrx:i18n>
   </xrx:title>
   <xrx:subtitle></xrx:subtitle>
-  <xrx:description>handling of controlled vocabularies in SKOS for Illuminated Charter project</xrx:description>
+  <xrx:description>Handles a controlled vocabulary in SKOS built for the Illuminated Charter project. If no support from the project can be provided (illuminierteurkunden@gmail.com), this app can be deleted.</xrx:description>
   <xrx:author>maburg</xrx:author>
   <xrx:licence>
 This is a component file of the VdU Software for a Virtual Research Environment for the handling of Medieval charters.
