@@ -1198,7 +1198,6 @@
         <xs:complexType mixed="true">
             <xs:attributeGroup ref="lang"/>
             <xs:attributeGroup ref="standard"/>
-            <xs:attributeGroup ref="resp"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="witListPar">
@@ -1687,6 +1686,7 @@
                 </xs:choice>
             </xs:sequence>
             <xs:attributeGroup ref="reference"/>
+            <xs:attributeGroup ref="standard"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="dimensions">
@@ -2165,7 +2165,6 @@
                     <xs:element ref="sup"/>
                 </xs:choice>
             </xs:sequence>
-            <xs:attributeGroup ref="resp"/>
             <xs:attributeGroup ref="lang"/>
             <xs:attributeGroup ref="standard"/>
         </xs:complexType>
@@ -5105,7 +5104,6 @@
     </xs:element>
     <xs:attributeGroup name="reference">
         <xs:attributeGroup ref="type"/>
-        <xs:attributeGroup ref="resp"/>
         <xs:attributeGroup ref="target"/>
         <xs:attributeGroup ref="key"/>
     </xs:attributeGroup>
