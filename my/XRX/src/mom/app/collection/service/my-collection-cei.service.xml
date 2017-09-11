@@ -54,20 +54,24 @@ along with VdU/VRET.  If not, see http://www.gnu.org/licenses.
       xsi:schemaLocation="http://www.monasterium.net/NS/cei https://raw.githubusercontent.com/icaruseu/mom-ca/master/my/XRX/src/mom/app/cei/xsd/cei.xsd"
       xmlns:cei="http://www.monasterium.net/NS/cei">
       <cei:teiHeader>
-        <cei:titleStmt>Export of {$mycollection-objectid} </cei:titleStmt>
-        <cei:publicationStmt>
-          <cei:p>For private use only.</cei:p>
-        </cei:publicationStmt>
-        <cei:sourceDesc>
-          <cei:p>Extracted private data from http://www.monasterium.net</cei:p>
-        </cei:sourceDesc>
+        <cei:fileDesc>
+          <cei:titleStmt><cei:title>Export of {$mycollection-objectid} </cei:title></cei:titleStmt>
+          <cei:publicationStmt>
+            <cei:p>For private use only.</cei:p>
+          </cei:publicationStmt>
+          <cei:sourceDesc>
+            <cei:p>Private data extracted from http://www.monasterium.net</cei:p>
+          </cei:sourceDesc>
+        </cei:fileDesc>
       </cei:teiHeader>
       <cei:text>
         <cei:group>{
           for $content in $entries//atom:content
-	  let $u := $content/cei:text
-          return
-          $u
+	         let $u := $content/cei:text
+            return
+            <cei:text id="{$u/ancestor::atom:entry/atom:id/string()}" type="charter">
+              {$u/*}
+            </cei:text>
           }
         </cei:group>
       </cei:text>
