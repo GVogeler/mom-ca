@@ -1299,6 +1299,7 @@
             <xs:sequence minOccurs="0" maxOccurs="unbounded">
                 <xs:choice>
                     <xs:group ref="layout"/>
+                    <xs:element ref="foreign"/>
                 </xs:choice>
             </xs:sequence>
             <xs:attributeGroup ref="standard"/>
