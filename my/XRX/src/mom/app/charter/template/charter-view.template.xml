@@ -125,7 +125,9 @@ it leaves the active development stage.
     
         <div id="indexlist">
         <insert-placeName/>
-        <insert-persName/>        
+	<insert-geogName/>
+        <insert-persName/>
+	<insert-orgName/>        
         <insert-item/>
         </div>
       

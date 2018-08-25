@@ -1964,13 +1964,13 @@
             <xsl:if test="./node()">
                 <li>
                     <xsl:apply-templates/>
+	            <ul class="inline">
+	              <xsl:call-template name="language"/>
+	              <xsl:call-template name="reg"/>
+	              <xsl:call-template name="existent"/>
+	              <xsl:call-template name="type"/>
+	            </ul>
                 </li>
-                <ul class="inline">
-                    <xsl:call-template name="language"/>
-                    <xsl:call-template name="reg"/>
-                    <xsl:call-template name="existent"/>
-                    <xsl:call-template name="type"/>
-                </ul>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
@@ -1984,7 +1984,7 @@
                     <xsl:apply-templates/>
                 </li>
                 <ul class="inline">
-                    <xsl:call-template name="lang"/>
+                    <xsl:call-template name="language"/>
                     <xsl:call-template name="reg"/>
                     <xsl:call-template name="existent"/>
                     <xsl:call-template name="type"/>
