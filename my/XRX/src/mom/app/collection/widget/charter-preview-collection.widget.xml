@@ -100,11 +100,14 @@ it leaves the active development stage.
       <xrx:name>$wcharter-preview:num-images</xrx:name>
       <xrx:expression>count($constructor:charter//cei:graphic/@url)</xrx:expression>
     </xrx:variable>
+    <!-- $constructor:charter-context != 'fond' -->
     <xrx:variable>
       <xrx:name>$wcharter-preview:charter-url</xrx:name>
       <xrx:expression>
         if(not($wcharter-preview:islinked)) then 
-          concat(conf:param('request-root'), $charter:rcollectionid, '/', $wcharter-preview:id, '/charter') 
+          concat(conf:param('request-root'), $charter:rcollectionid, '/', $wcharter-preview:id, '/charter')
+        
+        else if($constructor:charter-context = 'fond') then concat(conf:param('request-root'), $charter:rarchiveid, '/', $charter:rfondid, '/', xmldb:encode(charter:charterid(root($constructor:charter)//atom:id/text())) , '/charter') 
         else
           concat(conf:param('request-root'), $charter:rcollectionid, '/charter?atomid=', $wcharter-preview:atom-id)
       </xrx:expression>
@@ -141,6 +144,15 @@ it leaves the active development stage.
         </xrx:rule>
         ) else false()
       </xrx:expression>
+    </xrx:variable>
+      <xrx:variable>
+    	<xrx:name>$tokenized-url</xrx:name>
+    	<xrx:expression>tokenize(request:get-url(),"/") </xrx:expression>
+    </xrx:variable>
+        <xrx:variable>
+    	<xrx:name>$wcharter-preview:owner</xrx:name>
+    	<xrx:expression>if(contains($tokenized-url[last()],"fond")) then doc(concat(metadata:base-collection-path('archive', $tokenized-url[last()-2], 'public'),$tokenized-url[last()-2], ".eag.xml"))//eag:identity/eag:autform/text() 
+                  	else(root($constructor:charter)//atom:author/atom:email/text())</xrx:expression>
     </xrx:variable>
   </xrx:variables>
   <xrx:divs>
@@ -234,7 +246,10 @@ it leaves the active development stage.
                     <xrx:key>my-archive</xrx:key>
                     <xrx:default>MyArchive</xrx:default>
                   </xrx:i18n>
-                </span>
+                </span><br/>
+
+                  <script type="text/javascript">$(document).ready(function(){{$("#copy{$wcharter-preview:id}").click(function(){{createLegalDialog("{conf:param('request-root')}", "{$wcharter-preview:atom-id}","{$wcharter-preview:owner}");}});}});</script>
+   
                 <!-- ### Bookmark trigger ### -->
                 {
                 if($constructor:charter-context != 'linked-fond') then

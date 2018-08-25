@@ -51,6 +51,10 @@
 			<xrx:name>$wbookmarks:navigation</xrx:name>
 			<xrx:expression>pagination:navi($wbookmarks:numentries)</xrx:expression>
 		</xrx:variable>
+		  <xrx:variable>
+      <xrx:name>$illurkimages</xrx:name>
+      <xrx:expression>''</xrx:expression>
+    </xrx:variable>
 	</xrx:variables>
 	<xrx:portal>tag:www.monasterium.net,2011:/mom/portal/desktop</xrx:portal>
 	<xrx:init>
@@ -136,9 +140,9 @@
 					let $tokens := tokenize(substring-after($bookmarked-charter, conf:param('atom-tag-name')), '/')
 					let $charter-context := 
 					let $probably-collection-id := $tokens[3]			
-					let $collection-id-tokens-count := count(tokenize($probably-collection-id, '-'))
-					let $collection-context := 				  
-					    if($collection-id-tokens-count=5) then 'mycollection' else 'collection'
+          (: decision if bookmark is set in a 'mycollection' or 'collection' :)
+					let $collection-context := mycollection:checkifmycollection($probably-collection-id)
+					
 					let $probably-collection-atom-id := metadata:atomid($collection-context, $probably-collection-id)
 					return				 
 					 if(exists(metadata:base-collection($collection-context, 'public')//atom:id[.=$probably-collection-atom-id])) then 'collection' else 'fond'
@@ -185,6 +189,10 @@
 									<xrx:name>$constructor:collection-id</xrx:name>
 									<xrx:expression>$collection-id</xrx:expression>
 								</xrx:parameter>
+								  <xrx:parameter>
+                  <xrx:name>$illurkimages</xrx:name>
+                  <xrx:expression>''</xrx:expression>
+                </xrx:parameter>
 							</xrx:pass>
 						</xrx:subwidget>
 					</div>

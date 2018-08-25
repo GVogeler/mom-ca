@@ -68,7 +68,6 @@
        		<xrx:name>$is-shared</xrx:name>
        		<xrx:expression>mycharter:is-shared-with($entry, $xrx:user-id)</xrx:expression>
        </xrx:variable>
-
         <xrx:variable>
             <xrx:name>$updater</xrx:name>
             <xrx:expression>mycollection:checkUpdateCharter($entry)</xrx:expression>
@@ -325,7 +324,9 @@
             position: absolute;
             top: 430px;
             left: 670px;}}
-
+select .group {{
+font-weight: bold !important;
+}}
 
  </style>
     </xrx:csss>
@@ -398,7 +399,8 @@
     <xrx:view>
         <divs> {mycollection:makeBindings($entry, $distinct_nodes)} </divs>
         <div data-demoid="393de52d-1b4f-4df8-99b1-e7af26b713fe" id="dmy-collection-charter-edit">
-         {if($xrx:user-id = $owner_mail or $is-shared) then ()
+         {if($xrx:user-id = $owner_mail or $is-shared) then ( <script type="text/javascript">window.setInterval(function(){{CheckSessionStatus();}},30000); </script>  )
+         else if($xrx:user-id = 'guest') then()
          else (<script type="text/javascript"> $(document).ready(function(){{ $('#dinner-textann').empty();
          									   PermisDialog();}})</script>
 											  	)}
@@ -415,7 +417,7 @@
                                 <xrx:dbgroup>atom</xrx:dbgroup>
                             </xrx:rule>
                         </xrx:rules>
-                        <xrx:true>                   
+                        <xrx:true>             
                            <div data-demoid="09a18129-a5e4-42f7-ab9e-1d4bcf9497bb"
                                 id="dui-imageann">
                                 <script type="text/javascript"> $(document).ready(function(){{
@@ -510,6 +512,14 @@
                         
              
                     </div>
+                    <div id="header-options-div">
+                    <div id="mode-select-div" >
+                         <select id="mode-select">
+                         	<option value="">Standard</option>
+                         	<option value="?mode=illurk">Illurk</option>
+                         	<option value="?mode=max">Full</option>
+                         </select>
+                    </div>
                    
                     <div data-demoid="4e751e31-7e32-42cd-96a3-ce571b5ea97a" id="image-tool-div">
                         <button id="open-image-tool">
@@ -518,6 +528,7 @@
                                 <xrx:default>Open Image Tools</xrx:default>
                             </xrx:i18n>
                         </button>
+                    </div>
                     </div>
                 </xrx:north>
                 <xrx:south id="dtextann">
@@ -830,7 +841,8 @@
              <div class="available-controlled-vocabularies" style="display:none">{
 let $glossare := collection("/db/mom-data/metadata.controlledVocabulary.public")//atom:entry/atom:content/rdf:RDF
 let $job :=  (for $i in $glossare/skos:ConceptScheme
-let $paare := concat('"',normalize-space(replace(data($i/@rdf:about), '#', '')), '":"',normalize-space($i/skos:prefLabel[@xml:lang="de"]/text()), '"')
+let $cvtranslated := if($i/skos:prefLabel/@xml:lang=$sprache)then normalize-space($i/skos:prefLabel[@xml:lang=$sprache]/text()) else(normalize-space($i/skos:prefLabel[1]/text()))
+let $paare := concat('"',normalize-space(replace(data($i/@rdf:about), '#', '')), '":"',$cvtranslated, '"')
 return jsonx:object($paare)
 )
 return  jsonx:array($job)}</div>
@@ -841,7 +853,11 @@ return  jsonx:array($job)}</div>
                 "{ conf:param('request-root') }" }});
                 jQuery("#icharter").appendTo("#dcharter-instance").show(); jQuery(".anchor",
                 "#dinner-textann").click(function() {{ $(".xrx-visualxml").each(function(){{
-                $(this).xrxVisualxml("clear"); }}); }}); }}); </script>
+                $(this).xrxVisualxml("clear"); }}); }});
+                jQuery("#mode-select").change(function(){{var path = window.location.pathname + $(this).val();  window.location.replace(path);}});               
+                var mode = window.location.href.substring(window.location.href.indexOf("?"));
+                jQuery("#mode-select > option[value='"+mode+"']").attr("selected", "selected");
+                 }}); </script>
                 <div id="permission_dialog" title="Permission denied" style="display: none"><xrx:i18n><xrx:key>permission-denied-text</xrx:key><xrx:default>This is a private Charter, you need a permission to edit it. 
                 																						Closing this dialog redirects you to the Monasterium-Homepage.</xrx:default></xrx:i18n></div>
         </div>
