@@ -1746,6 +1746,7 @@
                 </xs:choice>
             </xs:sequence>
             <xs:attributeGroup ref="standard"/>
+            <xs:attribute name="scope" type="xs:anySimpleType" use="optional"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="sealDimensions">
