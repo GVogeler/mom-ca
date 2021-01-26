@@ -499,7 +499,7 @@
     <xsl:template name="tenor">
     		<xsl:variable name="tenor" select="//cei:tenor"/>
     		<xsl:variable name="sourceDescVolltext" select="//cei:sourceDescVolltext/cei:bibl"/>
-        <xsl:if test="$tenor/text()">
+        <xsl:if test="$tenor">
             <fo:block font-size="10pt" font-family="DejaVuSans" margin-left="5pt" margin-top="10pt" text-indent="10mm" line-height="15pt" line-stacking-strategy="font-height">
                 <xsl:apply-templates select="$tenor"/>
             </fo:block>
@@ -516,6 +516,11 @@
                 </fo:block>
             </xsl:if>
         </xsl:if>
+    </xsl:template>
+    <xsl:template match="cei:pTenor">
+        <fo:block>
+            <xsl:apply-templates/>
+        </fo:block>
     </xsl:template>
     <xsl:template match="cei:quote">
         <fo:inline font-style="oblique">
